@@ -1,9 +1,7 @@
 # Databricks notebook source
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DateType, FloatType, LongType
-import pytest
-from chispa import assert_df_equality
-import os
+
 # COMMAND ----------
 
 
@@ -64,9 +62,6 @@ class DataSet:
             if len(columns_intersection_and_not_keys):
                 self.df.drop(tuple(columns_intersection_and_not_keys))
     
-    #def display(self):
-    #    self.df.display()
-    
     def show(self):
          self.df.show()
     
@@ -74,56 +69,7 @@ class DataSet:
         self.df.write(path, mode)
     def take(self, n):
         return self.df.take(n)
-    '''def test_create_dataset(self, spark_test_session):
-        df_test = self.df.take(2)
-        expected_result = spark_test_session.createDataFrame(
-            data = [
-                (
-                    38,
-                    "26701",
-                    "AUT12027900",
-                    "PRET",
-                    "2013-05-03",
-                    15,
-                    "BONGARZONE TP",
-                    "TER",
-                    6,
-                    "Prêts",
-                    "DLAFFEC",
-                    "1970-01-01",
-                    "null",
-                    "2023-02-10",
-                    "CAPIMPAYKSP",
-                    "null",
-                    "null",
-                    "null",
-                ),
-                (
-                    38,
-                    "A0014605",
-                    "AUT12027900",
-                    "PRET",
-                    "2013-05-03",
-                    15,
-                    "BONGARZONE TP",
-                    "TER",
-                    6,
-                    "Prêts",
-                    "CLIENT",
-                    "1970-01-01",
-                    "null",
-                    "2023-02-10",
-                    "CAPIMPAYKSP",
-                    "null",
-                    "null",
-                    "null",
-                )
-            ],
-            schema = DATASET_SCHEMA
-        )
-        
-        assert_df_equality(expected_result, df_test, ignore_row_order=True, ignore_schema=True)'''
-
+    
 # COMMAND ----------
 
 DATASET_SCHEMA: StructType = StructType(
