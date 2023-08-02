@@ -2,6 +2,7 @@ import pytest
 from pyspark.sql import SparkSession
 from Exercice1 import *
 from datetime import date 
+from chispa import assert_df_equality
 
 def test_create_dataset(spark_session):
     
