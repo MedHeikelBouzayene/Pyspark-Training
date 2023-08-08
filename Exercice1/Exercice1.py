@@ -151,7 +151,7 @@ REAC_REF_ACT_TYPE_SCHEMA: StructType = StructType(
 
 if __name__ == "__main__":
     
-    print("test Lambda11")
+    print("test Lambda12")
     spark = (SparkSession.builder \
         .appName("Exercice 1") \
         .getOrCreate())
