@@ -149,7 +149,7 @@ REAC_REF_ACT_TYPE_SCHEMA: StructType = StructType(
 
 if __name__ == "__main__":
     
-    print("test jenkins1")
+    print("test jenkins2")
     spark = (SparkSession.builder \
         .appName("Exercice 1-Read-Write-From-S3") \
         .getOrCreate())
@@ -203,3 +203,7 @@ if __name__ == "__main__":
 
 
 spark.stop()
+
+
+#withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable:'AWS_ACCESS_KEY_ID', 
+                        #credentialsId:'deploytos3-heikel', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
