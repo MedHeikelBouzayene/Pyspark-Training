@@ -149,7 +149,7 @@ REAC_REF_ACT_TYPE_SCHEMA: StructType = StructType(
 
 if __name__ == "__main__":
     
-    print("test jenkins37")
+    print("test jenkins38")
     spark = (SparkSession.builder \
         .appName("Exercice 1-Read-Write-From-S3") \
         .getOrCreate())
